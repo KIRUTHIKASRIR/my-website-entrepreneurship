@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🍞 Bread - SavrAI</title>
+  <style>
+    /* Fullscreen Animated Background Layer with Texture */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow-x: hidden;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .background-layer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(-45deg, #ffecd2, #fcb69f, #ffb6b9, #fae3d9);
+      background-size: 400% 400%;
+      animation: gradientBG 20s ease infinite;
+      z-index: -2;
+    }
+
+    /* Texture Overlay (grain effect) */
+    .texture-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: url('https://www.transparenttextures.com/patterns/diamond-upholstery.png'); /* subtle texture */
+      opacity: 0.15;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Main Content Styles */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      background: rgba(255, 243, 230, 0.6); /* more transparent */
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .top-bar img {
+      height: 65px;
+      margin-right: 15px;
+      border-radius: 12px;
+    }
+
+    .top-bar-title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #d77a61;
+    }
+
+    .header {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .header img {
+      width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1.2s ease;
+    }
+
+    h1 {
+      margin-top: 15px;
+      font-size: 2.5rem;
+      color: #d77a61;
+      animation: slideDown 1s ease;
+    }
+
+    .info {
+      margin: 30px auto;
+      text-align: center;
+      font-size: 1.1rem;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .preserve-tips {
+      max-width: 700px;
+      margin: 30px auto;
+      background: rgba(255, 255, 255, 0.7); /* translucent white */
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+      animation: fadeIn 2s ease;
+      font-size: 1rem;
+    }
+
+    .preserve-tips h2 {
+      color: #d77a61;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .recipes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .recipe-card {
+      background: rgba(255, 255, 255, 0.75); /* translucent white */
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      width: 220px;
+      transition: transform 0.3s ease;
+      text-align: center;
+      animation: slideUp 1.5s ease;
+    }
+
+    .recipe-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .recipe-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 15px 15px 0 0;
+    }
+
+    .recipe-card h3 {
+      padding: 10px;
+      color: #444;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 50px;
+      font-style: italic;
+      color: #666;
+      font-size: 0.95rem;
+      animation: fadeIn 2s ease;
+      padding-bottom: 20px;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      .recipes {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .top-bar {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+
+      .top-bar img {
+        margin-right: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Animated Background + Texture -->
+  <div class="background-layer"></div>
+  <div class="texture-overlay"></div>
+
+  <!-- Top-left logo and branding -->
+  <div class="top-bar">
+    <img src="file:///C:/Users/ACER/Downloads/create-a-modern--minimalistic-icon-for-a-smart-foo.jpg" alt="SavrAI Logo">
+    <div class="top-bar-title">SavrAI - AI driven food saver and waste reducer</div>
+  </div>
+
+  <div class="header">
+    <img src="https://static01.nyt.com/images/2015/04/30/dining/29BIGAPPETITE/29BIGAPPETITE-superJumbo.jpg" alt="Bread">
+    <h1>🍞 Bread</h1>
+  </div>
+
+  <div class="info">
+    <p><strong>Expiry Date:</strong> May 12, 2025</p>
+    <p><strong>Status:</strong> Expiring in 1 day!</p>
+  </div>
+
+  <!-- Preservation Tips -->
+  <div class="preserve-tips">
+    <h2>How to Preserve Bread Properly</h2>
+    <ul>
+      <li>Store bread in a cool, dry place—preferably in a bread box.</li>
+      <li>Wrap it in a clean cloth or paper bag to allow airflow and avoid mold.</li>
+      <li>If not consuming soon, slice and freeze the bread in portions.</li>
+      <li>Reheat frozen bread by toasting or baking—don’t microwave!</li>
+      <li>Avoid storing bread in the fridge—it dries it out faster.</li>
+    </ul>
+  </div>
+
+  <h2 style="text-align:center; color: #555;">Suggested Recipes</h2>
+
+  <div class="recipes">
+    <div class="recipe-card">
+      <img src="https://d36v5spmfzyapc.cloudfront.net/wp-content/uploads/2020/12/bread-upma.jpg" alt="Bread Upma">
+      <h3>Bread Upma</h3>
+    </div>
+    <div class="recipe-card">
+      <img src="https://aartimadan.com/wp-content/uploads/2021/08/veg-masala-toast-sandwich.jpg" alt="Toast Sandwich">
+      <h3>Toast Sandwich</h3>
+    </div>
+    <div class="recipe-card">
+      <img src="https://images8.alphacoders.com/135/1353659.png" alt="French Toast">
+      <h3>French Toast</h3>
+    </div>
+  </div>
+
+  <div class="footer">
+    You will receive an SMS reminder before the item expires.
+  </div>
+
+</body>
+</html>

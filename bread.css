@@ -1,0 +1,207 @@
+/* Fullscreen Animated Background Layer with Texture */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Animated Background */
+.background-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(-45deg, #ffecd2, #fcb69f, #ffb6b9, #fae3d9);
+  background-size: 400% 400%;
+  animation: gradientBG 20s ease infinite;
+  z-index: -2;
+}
+
+/* Texture Overlay */
+.texture-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('https://www.transparenttextures.com/patterns/diamond-upholstery.png');
+  opacity: 0.15;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Gradient Animation */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Main Content Styles */
+.top-bar {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: rgba(255, 243, 230, 0.6); /* Transparent top bar */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.top-bar img {
+  height: 65px;
+  margin-right: 15px;
+  border-radius: 12px;
+}
+
+.top-bar-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #d77a61;
+}
+
+.header {
+  text-align: center;
+  padding: 20px;
+}
+
+.header img {
+  width: 300px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1.2s ease;
+}
+
+h1 {
+  margin-top: 15px;
+  font-size: 2.5rem;
+  color: #d77a61;
+  animation: slideDown 1s ease;
+}
+
+.info {
+  margin: 30px auto;
+  text-align: center;
+  font-size: 1.1rem;
+  animation: fadeIn 1.5s ease;
+}
+
+/* Preservation Tips */
+.preserve-tips {
+  max-width: 700px;
+  margin: 30px auto;
+  background: rgba(255, 255, 255, 0.7); /* Translucent background */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+  animation: fadeIn 2s ease;
+  font-size: 1rem;
+}
+
+.preserve-tips h2 {
+  color: #d77a61;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.recipes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+/* Recipe Cards */
+.recipe-card {
+  background: rgba(255, 255, 255, 0.75); /* Translucent background */
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  width: 220px;
+  transition: transform 0.3s ease;
+  text-align: center;
+  animation: slideUp 1.5s ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-8px);
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+
+.recipe-card h3 {
+  padding: 10px;
+  color: #444;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 50px;
+  font-style: italic;
+  color: #666;
+  font-size: 0.95rem;
+  animation: fadeIn 2s ease;
+  padding-bottom: 20px;
+}
+
+/* Keyframe Animations */
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .recipes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .top-bar img {
+    margin-right: 0;
+  }
+}
